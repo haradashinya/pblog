@@ -3,7 +3,7 @@ import os
 from flask import Flask,render_template
 from flask_flatpages import FlatPages
 
-# define global variables.
+# Define global variables.
 DEBUG = True
 FLATPAGES_EXTENSION = ".md"
 app = Flask(__name__)
