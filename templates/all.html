@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for page in pages %}
+<div>
+    <h2><a href='/{{page.path}}/detail'>{{page.title}}</a></h2>
+    {% for tag in page.tags.split(",") %}
+    <a href="/tags/{{tag}}">{{tag}}</a>
+    {% endfor %}
+    {# 最初の３行だけ表示する #}
+    <div>{{"<br>".join(page.body.split("\n")[0:3])|safe}}</h2>
+    <div>
+        <a href='/{{page.path}}/detail'>続きを読む</a>
+    </div>
+    <div>{{page.date}}</div>
+
+
+</div>
+{% endfor %}
+
+
+
+
+
+{% endblock content %}
